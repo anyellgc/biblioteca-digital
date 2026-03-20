@@ -1,0 +1,67 @@
+body{
+
+font-family: Arial;
+background: linear-gradient(120deg,#150c1e,#8c4cc7);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+.container{
+
+background:rgb(162, 142, 179);
+padding:50px;
+border-radius:10px;
+width:350px;
+box-shadow:0px 10px 20px rgba(0, 0, 0, 0.899);
+align-items:center;
+
+}
+
+input,select,button{
+
+width:95%;
+padding:10px;
+margin-top:15px;
+
+
+}
+
+button{
+
+background:#284aa8;
+color:rgb(0, 0, 0);
+border:none;
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#2f80ed;
+
+}
+
+.tabs{
+
+display:flex;
+gap:15px;
+margin-top:15px;
+
+}
+
+#loginForm{
+
+display:none;
+
+}
+
+#mensaje{
+
+text-align:center;
+margin-top:15px;
+font-weight:bold;
+
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrador</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+    <h1>Panel Administrador</h1>
+
+    <h2>Registrar Libro</h2>
+
+    <form id="formLibro">
+
+        <input type="text" id="titulo" placeholder="Título del libro" required>
+
+        <input type="text" id="autor" placeholder="Autor" required>
+
+        <input type="file" id="pdf" accept="application/pdf" required>
+
+        <button type="submit">Guardar Libro</button>
+
+    </form>
+
+    <h2>Libros Registrados</h2>
+
+    <div id="listaLibros"></div>
+
+<script src="admin.js"></script>
+</body>
+</html>

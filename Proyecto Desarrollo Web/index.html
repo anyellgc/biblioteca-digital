@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+    <h2>Bienvenid@</h2>
+
+    <form id="registroForm">
+
+    <h3>Registrate con nosotras</h3>
+
+    <input type="text" id="nombre" placeholder="Nombre" required>
+
+    <input type="email" id="correoRegistro" placeholder="Correo" required>
+
+    <input type="password" id="passwordRegistro" placeholder="Contraseña" required>
+
+    <select id="rolRegistro">
+    <option value="usuario">Usuario</option>
+    <option value="admin">Administrador</option>
+    </select>
+
+    <button type="submit">Registrar</button>
+
+    </form>
+
+    <form id="loginForm">
+
+    <h3>Iniciar Sesión</h3>
+
+    <input type="email" id="correoLogin" placeholder="Correo" required>
+
+    <input type="password" id="passwordLogin" placeholder="Contraseña" required>
+
+    <button type="submit">Ingresar</button>
+
+    </form>
+
+    <div class="tabs">
+    <button type="button" onclick="mostrarRegistro()">Registrarse</button>
+    <button type="button" onclick="mostrarLogin()">Iniciar Sesión</button>
+    </div>
+
+    <p id="mensaje"></p>
+
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
