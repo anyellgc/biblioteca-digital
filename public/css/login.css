@@ -1,0 +1,256 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #0d0415; /* Fondo oscuro profundo */
+    color: #e2e8f0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* --- TARJETA DE AUTENTICACIÓN (MÁS GRANDE) --- */
+.auth-card {
+    background: #162031;
+    width: 100%;
+    max-width: 500px; /* Ancho aumentado */
+    padding: 50px 45px; /* Más espacio interno */
+    border-radius: 24px;
+    border: 1px solid #7c3aed;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 15px rgba(124, 58, 237, 0.2);
+    text-align: center;
+}
+
+/* Link volver al inicio */
+.back-link {
+    display: block;
+    text-align: left;
+    color: #a78bfa;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: #00f2ff;
+    transform: translateX(-5px);
+}
+
+/* Títulos */
+h2 {
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #94a3b8;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* --- FORMULARIO --- */
+.auth-form {
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    color: #a78bfa;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    background: #0d0415;
+    border: 1px solid #311b92;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #00f2ff;
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+}
+
+/* --- BOTÓN PRINCIPAL (NEÓN) --- */
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    margin-top: 15px;
+    background: linear-gradient(90deg, #7c3aed, #ff00ff); /* El degradado de tu imagen */
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 0, 255, 0.5);
+    filter: brightness(1.1);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* --- FOOTER DE LA TARJETA --- */
+.auth-footer {
+    margin-top: 35px;
+}
+
+.auth-footer p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.auth-footer a {
+    color: #00f2ff;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+    font-size: 1.2rem;
+}
+
+.auth-footer a:hover {
+    border-bottom: 1px solid #00f2ff;
+}
+
+/* --- CSS ESPECÍFICO PARA SAMSUNG A21S Y MÓVILES --- */
+
+/* Esta Media Query se activa cuando la pantalla es menor a 768px, 
+   lo que cubre perfectamente tu A21s y cualquier móvil moderno */
+@media (max-width: 768px) {
+    
+    /* 1. Reducimos márgenes y padding para ganar espacio */
+    .admin-container {
+        padding: 20px 4%; /* Menos espacio arriba/abajo y a los lados */
+    }
+
+    /* 2. Ajustamos los Títulos principales (h1) */
+    h1 {
+        font-size: 2.5rem; /* Achicamos de 3.8rem a 2.5rem para que no se corte */
+        line-height: 1.1;
+        margin-bottom: 15px;
+    }
+
+    /* 3. Ajustamos subtítulos y párrafos descriptivos */
+    .main-footer p, .subtitle {
+        font-size: 1rem; /* Un tamaño de texto estándar y legible */
+        max-width: 90%; /* Dejamos margen a los lados */
+    }
+
+    /* 4. DASHBOARD STATS: De 3 columnas a 1 columna */
+    .admin-stats {
+        grid-template-columns: 1fr; /* Una cajita arriba de la otra */
+        gap: 15px; /* Menor espacio entre ellas */
+    }
+
+    .stat-box {
+        padding: 20px; /* Hacemos las cajitas más compactas */
+    }
+
+    .stat-num {
+        font-size: 1.8rem; /* Achicamos el número de estadística */
+    }
+
+    /* 5. GRID DE TRABAJO: De 2 columnas (formulario y tabla) a 1 columna */
+    .admin-grid {
+        grid-template-columns: 1fr; /* Una sección arriba de la otra */
+        gap: 20px;
+    }
+
+    .auth-card {
+        padding: 20px; /* Menos espacio interno en las tarjetas */
+    }
+
+    h2 {
+        font-size: 1.2rem; /* Achicamos el título de las tarjetas (Nuevo Libro, etc.) */
+        margin-bottom: 20px;
+    }
+
+    /* 6. FORMULARIO: De 2 columnas de inputs a 1 sola */
+    .grid-form {
+        grid-template-columns: 1fr; /* Todos los inputs uno por fila */
+        gap: 12px;
+    }
+
+    /* Forzamos a que todos los inputs ocupen todo el ancho */
+    .input-group, .full-width {
+        grid-column: span 1;
+    }
+
+    input, select {
+        padding: 10px; /* Inputs un poco más compactos */
+    }
+
+    /* 7. TABLA DE GESTIÓN: Adaptar a la pantalla angosta */
+    .table-wrapper {
+        margin-top: 5px;
+        padding-bottom: 10px;
+    }
+
+    .admin-table th, .admin-table td {
+        padding: 12px 8px; /* Menor espacio interno en la tabla */
+        font-size: 0.85rem; /* Texto un poco más pequeño */
+    }
+
+    /* Ocultamos una columna no esencial si la pantalla es MUY angosta (como la del A21s)
+       para que las demás respiren. Ejemplo: Ocultar "Acciones" y mostrarla con un botón especial, 
+       pero por ahora la dejamos y solo achicamos todo. */
+    
+    .badge {
+        font-size: 0.7rem; /* Categoría más pequeña */
+        padding: 2px 6px;
+    }
+
+    .action-btn {
+        padding: 5px 8px; /* Botones más compactos */
+        font-size: 0.8rem;
+    }
+
+    /* 8. Botón Publicar (Más grande y fácil de presionar) */
+    .btn-submit {
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+
+    /* 9. Botones de Navegación */
+    .nav-buttons {
+        flex-direction: column; /* Un botón arriba del otro */
+        gap: 10px;
+        width: 100%;
+    }
+
+    .btn-outline, .btn-filled {
+        width: 100%;
+        text-align: center;
+    }
+
+}

@@ -1,0 +1,131 @@
+/* --- RESET Y BASE --- */
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #0d0415;
+    color: #e2e8f0;
+    overflow-x: hidden;
+}
+
+/* --- NAVBAR FUTURISTA --- */
+.navbar {
+    background: rgba(26, 11, 46, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 5%;
+    border-bottom: 2px solid #7c3aed;
+    position: sticky; top: 0; z-index: 1000;
+}
+
+.nav-container {
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1400px; margin: 0 auto;
+}
+
+.logo { font-size: 1.5rem; font-weight: 800; color: white; }
+.logo span { color: #00f2ff; }
+
+/* BARRA DE BÚSQUEDA RESALTADA */
+.search-wrapper {
+    position: relative; width: 40%;
+}
+.search-wrapper i {
+    position: absolute; left: 15px; top: 50%;
+    transform: translateY(-50%); color: #7c3aed;
+}
+.search-wrapper input {
+    width: 100%; padding: 12px 15px 12px 45px;
+    background: #0d0415; border: 1px solid #311b92;
+    border-radius: 50px; color: white; outline: none;
+    transition: 0.3s;
+}
+.search-wrapper input:focus {
+    border-color: #00f2ff; box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+
+.nav-user-info { display: flex; align-items: center; gap: 20px; }
+.user-name { font-weight: 600; color: #a78bfa; font-size: 0.9rem; }
+.btn-logout {
+    color: #ff00ff; text-decoration: none; font-weight: bold;
+    border: 1px solid #ff00ff; padding: 6px 15px; border-radius: 5px;
+    font-size: 0.85rem; transition: 0.3s;
+}
+.btn-logout:hover { background: #ff00ff; color: white; }
+
+/* --- HEADER Y FILTROS --- */
+.user-header { padding: 40px 5%; max-width: 1400px; margin: 0 auto; }
+.welcome-box h1 { font-size: 2.2rem; margin-bottom: 10px; color: white; }
+.welcome-box p { color: #94a3b8; font-size: 1.1rem; }
+
+.filter-tags { display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap; }
+.tag {
+    padding: 8px 20px; background: #1a0b2e; border: 1px solid #311b92;
+    border-radius: 50px; font-size: 0.85rem; cursor: pointer; transition: 0.3s;
+}
+.tag:hover, .tag.active {
+    background: #7c3aed; color: white; border-color: #7c3aed;
+    box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
+}
+
+/* --- GRID DE LIBROS (CARTAS) --- */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px; padding: 20px 5% 60px;
+    max-width: 1400px; margin: 0 auto;
+}
+
+.book-card {
+    background: #162031; border-radius: 15px; overflow: hidden;
+    transition: 0.4s; border: 1px solid rgba(255,255,255,0.05);
+    display: flex; flex-direction: column;
+}
+
+.book-card:hover {
+    transform: translateY(-10px);
+    border-color: #00f2ff;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.book-cover {
+    width: 100%; height: 280px; position: relative; background: #090210;
+}
+.book-cover img { width: 100%; height: 100%; object-fit: cover; }
+.book-badge {
+    position: absolute; top: 10px; right: 10px;
+    background: #ff00ff; color: white; padding: 4px 8px;
+    border-radius: 4px; font-size: 0.7rem; font-weight: bold;
+}
+
+.book-info { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
+.book-info h3 { font-size: 1.1rem; margin-bottom: 5px; color: white; }
+.author { font-size: 0.85rem; color: #a78bfa; margin-bottom: 10px; }
+.category { font-size: 0.75rem; color: #00f2ff; text-transform: uppercase; margin-bottom: 15px; }
+
+.btn-read {
+    margin-top: auto; padding: 10px; background: #7c3aed; color: white;
+    text-decoration: none; border-radius: 8px; text-align: center;
+    font-weight: bold; font-size: 0.9rem; transition: 0.3s;
+}
+.btn-read:hover { background: #00f2ff; color: #0d0415; }
+
+/* --- FOOTER USUARIO --- */
+.main-footer-user { text-align: center; padding: 40px 0; }
+.footer-line { height: 1px; width: 60%; background: #311b92; margin: 20px auto; }
+
+/* LOADER */
+.loader-container { grid-column: span 1 / -1; text-align: center; padding: 50px; }
+.spinner {
+    width: 40px; height: 40px; border: 4px solid rgba(0, 242, 255, 0.1);
+    border-top: 4px solid #00f2ff; border-radius: 50%;
+    animation: spin 1s linear infinite; margin: 0 auto 15px;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .search-wrapper { width: 100%; order: 3; margin-top: 15px; }
+    .nav-container { flex-wrap: wrap; }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | DreamLibrary</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="flex-center">
+
+    <div class="auth-card">
+        <a href="index.html" class="back-link">← Volver al inicio</a>
+        <h2>Bienvenid@ de nuevo</h2>
+        <p class="subtitle">Usa tu usuario y contraseña</p>
+
+        <form id="loginForm" class="auth-form">
+            <div class="input-group">
+                <label>Nombre de Usuario</label>
+                <input type="text" name="usuario" placeholder="Usuario" required>
+            </div>
+
+            <div class="input-group">
+                <label>Contraseña</label>
+                <input type="password" name="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn-submit">ENTRAR</button>
+        </form>
+
+        <div class="auth-footer">
+            <p>¿Aún no tienes cuenta?</p>
+            <a href="registro.html">Regístrate aquí</a>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

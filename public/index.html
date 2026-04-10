@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamLibrary | Tu Biblioteca Digital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-contenedor">
+            <svg class="lib-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 19.5C4 18.837 4.26339 18.2011 4.73223 17.7322C5.20107 17.2634 5.83696 17 6.5 17H20" stroke="#00f2ff" stroke-width="2" stroke-linecap="round"/>
+                <path d="M6.5 2H20V22H6.5C5.83696 22 5.20107 21.7366 4.73223 21.2678C4.26339 20.7989 4 20.163 4 19.5V4.5C4 3.8370 4.26339 3.2011 4.73223 2.7322C5.20107 2.2634 5.83696 2 6.5 2Z" stroke="#7c3aed" stroke-width="2"/>
+                <path d="M12 6V12L15 9" stroke="#ff00ff" stroke-width="2"/>
+            </svg>
+            <div class="logo">DREAM<span>LIBRARY</span></div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">INICIO</a></li>
+            <li class="dropdown-contact">
+                <a href="#">CONTACTO <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="contact-card">
+                    <div class="admin-profile">
+                        <div class="admin-avatar">AG</div>
+                        <div class="admin-info">
+                            <span class="admin-name">Anyell Gomez</span>
+                            <span class="admin-data">📧ac5095319@gmail.com</span>
+                            <span class="admin-data">📞+57 300 123 4567</span>
+                        </div>
+                    </div>
+                    <div class="admin-profile">
+                        <div class="admin-avatar">MS</div>
+                        <div class="admin-info">
+                            <span class="admin-name">Mayra Sanchez</span>
+                            <span class="admin-data">📧mayrakarinasanchez114@gmail.com</span>
+                            <span class="admin-data">📞+57 301 987 6543</span>
+                        </div>
+                    </div>
+                    <button class="btn-msg" onclick="openModal()">🚀 Soporte Directo</button>
+                </div>
+            </li>
+        </ul>
+
+        <div class="nav-buttons">
+            <a href="login.html" class="btn-outline">INICIAR SESIÓN</a>
+            <a href="registro.html" class="btn-filled">REGISTRARSE</a>
+        </div>
+    </nav>
+
+    <main class="hero-container">
+        <section class="hero-content">
+            <div class="badge-new">NUEVA EXPERIENCIA DIGITAL 2026</div>
+            <h1>Tu biblioteca digital <br><span class="text-gradient">en un solo lugar.</span></h1>
+            <p>Gestiona, lee y descarga libros.</p>
+            <div class="spacer-cta"></div> <a href="registro.html" class="btn-main">Empezar ahora</a>
+        </section>
+
+        <section class="stats-bar">
+            <div class="stat-card">
+                <span class="number">📚Libros</span>
+                <span class="label">"Sin estantes, sin límites, sin esperas."</span>
+            </div>
+            <div class="stat-card">
+                <span class="number">🚀Aventura gratis</span>
+                <span class="label">Totalmente gratuita</span>
+            </div>
+            <div class="stat-card">
+                <span class="number">📖24/7</span>
+                <span class="label">Siempre abierto para leer</span>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="feature-item">
+                <i class="fa-solid fa-book-open"></i>
+                <h3>Lectura Flexible</h3>
+                <p>Nuestra interfaz se adapta a cualquier dispositivo móvil o tablet.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-user-shield"></i>
+                <h3>Seguridad Pro</h3>
+                <p>Protección de datos y cifrado de extremo a extremo.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-cloud-arrow-down"></i>
+                <h3>Descarga Veloz</h3>
+                <p>Obtén tus contenidos en segundos sin esperas ni publicidad.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">DREAM<span>LIBRARY</span></div>
+            <div class="footer-line"></div>
+            <p class="copyright">© 2026 DreamLibrary |Diseñado por Anyell Gomez & Mayra Sanchez</p>
+        </div>
+    </footer>
+
+    <div id="supportModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Soporte Técnico</h2>
+            <p>Escríbenos y te responderemos en breve.</p>
+            <form class="modal-form">
+                <label for="fname">Nombre Completo</label>
+                <input type="text" id="fname" placeholder="Ej. Juan Pérez" required>
+                
+                <label for="femail">Correo Electrónico</label>
+                <input type="email" id="femail" placeholder="juan@ejemplo.com" required>
+                
+                <label for="fmsg">¿En qué podemos ayudarte?</label>
+                <textarea id="fmsg" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                
+                <button type="submit" class="btn-submit-form">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('supportModal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('supportModal').style.display = 'none'; }
+    </script>
+
+</body>
+</html>

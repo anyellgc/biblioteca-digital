@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin | DreamLibrary</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">DREAM<span>ADMIN</span></div>
+        <div class="nav-right">
+            <span class="admin-tag">Panel de Control v1.0</span>
+            <a href="index.html" class="btn-logout">Cerrar Sesión</a>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <div class="admin-stats">
+            <div class="stat-box">
+                <i class="fa-solid fa-book"></i>
+                <div>
+                    <p class="stat-num">124</p>
+                    <p class="stat-label">Libros Totales</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <i class="fa-solid fa-users"></i>
+                <div>
+                    <p class="stat-num">850</p>
+                    <p class="stat-label">Usuarios</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <i class="fa-solid fa-download"></i>
+                <div>
+                    <p class="stat-num">3.2K</p>
+                    <p class="stat-label">Descargas</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="admin-grid">
+            <section class="auth-card">
+                <h2><i class="fa-solid fa-plus-circle"></i> Nuevo Libro</h2>
+                <form id="formSubirLibro" class="grid-form">
+                    <div class="input-group">
+                        <label>Título del Libro</label>
+                        <input type="text" id="titulo" placeholder="Ej: Cien años de soledad" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Autor</label>
+                        <input type="text" id="autor" placeholder="G. García Márquez" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Categoría</label>
+                        <select id="categoria" class="custom-input">
+                            <option value="literatura">Literatura</option>
+                            <option value="tecnologia">Tecnología</option>
+                            <option value="ciencia">Ciencia</option>
+                            <option value="historia">Historia</option>
+                            <option value="historia">Ciencia Ficción</option>
+                            <option value="historia">Psicología</option>
+                            <option value="historia">Romantice</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Idioma</label>
+                        <input type="text" id="idioma" placeholder="Español">
+                    </div>
+                    <div class="input-group full-width">
+                        <label>URL de Portada</label>
+                        <input type="url" id="portadaUrl" placeholder="https://link-de-la-imagen.jpg">
+                    </div>
+                    <div class="input-group full-width">
+                        <label>Archivo PDF</label>
+                        <input type="file" id="pdf" accept=".pdf" required>
+                    </div>
+                    <button type="submit" class="btn-submit full-width">PUBLICAR LIBRO</button>
+                </form>
+            </section>
+
+            <section class="auth-card">
+                <h2><i class="fa-solid fa-list"></i> Inventario Reciente</h2>
+                <div class="table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Libro</th>
+                                <th>Categoría</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Don Quijote</td>
+                                <td><span class="badge">Clásicos</span></td>
+                                <td>
+                                    <button class="action-btn edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="action-btn delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Clean Code</td>
+                                <td><span class="badge">Sistemas</span></td>
+                                <td>
+                                    <button class="action-btn edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="action-btn delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

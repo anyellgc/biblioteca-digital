@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | DreamLibrary</title>
+    <link rel="stylesheet" href="css/registro.css">
+</head>
+<body class="flex-center">
+
+    <div class="auth-card wide">
+        <h2>Crea tu perfil</h2>
+        <p class="subtitle">Elige tu rol y empieza a explorar</p>
+
+        <form action="/registro" method="POST" class="grid-form">
+            <div class="input-group"><label>Nombre</label><input type="text" name="nombre" required></div>
+            <div class="input-group"><label>Apellido</label><input type="text" name="apellido" required></div>
+            <div class="input-group"><label>Edad</label><input type="number" name="edad" required></div>
+            <div class="input-group"><label>Correo</label><input type="email" name="correo" required></div>
+            <div class="input-group"><label>Usuario</label><input type="text" name="usuario" class="border-highlight" required></div>
+            <div class="input-group"><label>Contraseña</label><input type="password" name="password" required></div>
+
+            <div class="input-group full-width">
+                <label>Tipo de Cuenta</label>
+                <select name="rol" class="custom-select">
+                    <option value="usuario">USUARIO</option>
+                    <option value="admin">ADMINISTRADOR</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-submit full-width">CREAR CUENTA</button>
+        </form>
+
+        <div class="auth-footer">
+            <a href="login.html">¿Ya tienes cuenta? Inicia sesión</a>
+        </div>
+    </div>
+    <script src="js/registro.js"></script>
+</body>
+</html>

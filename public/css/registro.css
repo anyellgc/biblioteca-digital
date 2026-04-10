@@ -1,0 +1,139 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif; 
+}
+
+body { 
+    background: #0d0415; 
+    color: white; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    min-height: 100vh; 
+    padding: 20px; 
+}
+
+/* --- TARJETA DE REGISTRO (TAMAÑO REDUCIDO) --- */
+.auth-card.wide { 
+    background: #162031; 
+    padding: 35px 40px; /* Relleno más equilibrado */
+    border-radius: 20px; 
+    border: 1px solid #7c3aed; 
+    width: 100%; 
+    max-width: 670px; /* Reducción de tamaño aplicada aquí */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 15px rgba(124, 58, 237, 0.1);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem; /* Título un poco más pequeño */
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.subtitle { 
+    text-align: center;
+    color: #94a3b8; 
+    margin-bottom: 30px; 
+    font-size: 1rem;
+}
+
+/* --- FORMULARIO EN CUADRÍCULA --- */
+.grid-form { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 18px; /* Espaciado interno entre campos */
+}
+
+.input-group { 
+    display: flex; 
+    flex-direction: column; 
+
+}
+
+.input-group label { 
+    font-size: 1.1rem; 
+    color: #a78bfa; 
+    margin-bottom: 8px; 
+    font-weight: 600;
+}
+
+.input-group input, .custom-select { 
+    padding: 12px; /* Un poco más delgados */
+    background: #0d0415; 
+    border: 1px solid #311b92; 
+    border-radius: 10px; 
+    color: white; 
+    font-size: 0.95rem;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+/* Efecto Focus */
+.input-group input:focus, .custom-select:focus {
+    border-color: #00f2ff;
+    box-shadow: 0 0 8px rgba(0, 242, 255, 0.2);
+}
+
+.full-width { 
+    grid-column: span 2; 
+}
+
+/* --- BOTÓN NEÓN --- */
+.btn-submit { 
+    width: 100%; 
+    padding: 15px; 
+    background: linear-gradient(90deg, #7c3aed, #ff00ff); 
+    color: white; 
+    border: none; 
+    font-size: 1.1rem;
+    font-weight: 800; 
+    border-radius: 10px; 
+    cursor: pointer;
+    margin-top: 15px; 
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
+    text-transform: uppercase;
+}
+
+.btn-submit:hover { 
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 0, 255, 0.4);
+    filter: brightness(1.1);
+}
+
+/* --- FOOTER --- */
+.auth-footer { 
+    margin-top: 25px; 
+    text-align: center; 
+    font-size: 0.95rem; 
+}
+
+.auth-footer a { 
+    color: #00f2ff; 
+    text-decoration: none; 
+    font-weight: 700;
+    transition: 0.3s;
+    font-size: 1.2rem;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 8px rgba(0, 242, 255, 0.5);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) { 
+    .grid-form { 
+        grid-template-columns: 1fr; 
+    } 
+    .full-width { 
+        grid-column: span 1; 
+    }
+    .auth-card.wide {
+        padding: 30px 20px;
+    }
+}
