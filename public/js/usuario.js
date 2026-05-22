@@ -2,94 +2,54 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const contenedorLibros =
-        document.getElementById("contenedorLibros");
-
-    const modal =
-        document.getElementById("modalDetalleLibro");
-
-    const btnCerrar =
-        document.getElementById("btnCerrarDetalle");
-
-    const modalPortada =
-        document.getElementById("modalPortada");
-
-    const modalCategoria =
-        document.getElementById("modalCategoria");
-
-    const modalTitulo =
-        document.getElementById("modalTitulo");
-
-    const modalAutor =
-        document.getElementById("modalAutor");
-
-    const modalIdioma =
-        document.getElementById("modalIdioma");
-
-    const modalDescripcion =
-        document.getElementById("modalDescripcion");
-
-    const btnLectorFinal =
-        document.getElementById("btnLectorFinal");
+    const contenedorLibros = document.getElementById("contenedorLibros");
+    const modal = document.getElementById("modalDetalleLibro");
+    const btnCerrar =document.getElementById("btnCerrarDetalle");
+    const modalPortada = document.getElementById("modalPortada");
+    const modalCategoria = document.getElementById("modalCategoria");
+    const modalTitulo = document.getElementById("modalTitulo");
+    const modalAutor = document.getElementById("modalAutor");
+    const modalIdioma = document.getElementById("modalIdioma");
+    const modalDescripcion = document.getElementById("modalDescripcion");
+    const btnLectorFinal = document.getElementById("btnLectorFinal");
 
     // BUSCADOR
-    const inputBusqueda =
-        document.getElementById("busqueda");
+    const inputBusqueda = document.getElementById("busqueda");
 
     // TAGS
-    const tags =
-        document.querySelectorAll(".tag");
+    const tags = document.querySelectorAll(".tag");
 
     // ESTRELLAS
-    const estrellas =
-        document.querySelectorAll(".star-interactive");
+    const estrellas = document.querySelectorAll(".star-interactive");
 
-    const ratingText =
-        document.querySelector(".rating-text-status");
+    const ratingText = document.querySelector(".rating-text-status");
 
     // COMENTARIOS
-    const inputComentario =
-        document.getElementById("inputComentario");
+    const inputComentario = document.getElementById("inputComentario");
 
-    const btnComentario =
-        document.getElementById("btnEnviarComentario");
+    const btnComentario = document.getElementById("btnEnviarComentario");
 
-    const contenedorComentarios =
-        document.getElementById("contenedorComentarios");
+    const contenedorComentarios = document.getElementById("contenedorComentarios");
 
     let todosLosLibros = [];
-
     let calificacionActual = 0;
-
     let libroActualId = null;
-
-    // ==========================================
     // OBTENER LIBROS
-    // ==========================================
+    
     async function obtenerLibros(){
 
         try{
 
-            const respuesta =
-                await fetch("/api/libros/todos");
-
-            todosLosLibros =
-                await respuesta.json();
-
+            const respuesta = await fetch("/api/libros/todos");
+            todosLosLibros = await respuesta.json();
             renderizarLibros(todosLosLibros);
 
         }catch(error){
 
-            console.error(
-                "Error cargando libros:",
-                error
-            );
+            console.error("Error cargando libros:",error);
         }
     }
-
-    // ==========================================
     // RENDERIZAR LIBROS
-    // ==========================================
     function renderizarLibros(libros){
 
         if(!contenedorLibros) return;
@@ -148,49 +108,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
             `).join("");
     }
-
-    // ==========================================
-    // ABRIR MODAL (CORREGIDO)
-    // ==========================================
+    
     window.verDetalles = async (id) => {
-
-        const libro =
-            todosLosLibros.find(
-                l => l._id === id
-            );
+        const libro = todosLosLibros.find( l => l._id === id);
 
         if(!libro) return;
 
         libroActualId = id;
 
-        modalPortada.src =
-            libro.portada;
+        modalPortada.src = libro.portada;
 
-        modalCategoria.textContent =
-            libro.categoria;
+        modalCategoria.textContent = libro.categoria;
 
-        modalTitulo.textContent =
-            libro.titulo;
+        modalTitulo.textContent = libro.titulo;
 
-        modalAutor.textContent =
-            libro.autor;
+        modalAutor.textContent =libro.autor;
 
-        modalIdioma.textContent =
-            libro.idioma || "Español";
+        modalIdioma.textContent = libro.idioma || "Español";
 
-        modalDescripcion.textContent =
-            libro.descripcion ||
-            "Sin reseña disponible.";
+        modalDescripcion.textContent = libro.descripcion || "Sin reseña disponible.";
 
-        btnLectorFinal.href =
-            libro.pdf;
+        btnLectorFinal.href = libro.pdf;
 
         // MOSTRAR MODAL
         modal.classList.add("active");
 
-        document.body.classList.add(
-            "modal-open"
-        );
+        document.body.classList.add("modal-open");
 
         // RESETEAR ELEMENTOS INTERACTIVOS
         inputComentario.value = "";
@@ -236,8 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 return;
             }
-
-            // Corregido: Mapeamos usando resena.calificacion y resena.comentario exactos del backend
             contenedorComentarios.innerHTML =
                 resenas.map(resena => `
 
@@ -267,51 +208,31 @@ document.addEventListener("DOMContentLoaded", () => {
             );
         }
     }
-
-    // ==========================================
     // CERRAR MODAL
-    // ==========================================
     if(btnCerrar){
 
         btnCerrar.addEventListener("click", () => {
 
             modal.classList.remove("active");
 
-            document.body.classList.remove(
-                "modal-open"
-            );
+            document.body.classList.remove("modal-open");
 
         });
 
     }
-
-    // ==========================================
     // CERRAR AL DAR CLICK AFUERA
-    // ==========================================
     window.addEventListener("click", (e) => {
-
         if(e.target === modal){
-
             modal.classList.remove("active");
-
-            document.body.classList.remove(
-                "modal-open"
-            );
+            document.body.classList.remove("modal-open");
         }
     });
-
-    // ==========================================
     // SISTEMA DE ESTRELLAS
-    // ==========================================
     estrellas.forEach(star => {
-
         star.addEventListener("click", () => {
-
-            calificacionActual =
-                parseInt(star.dataset.value);
+            calificacionActual = parseInt(star.dataset.value);
 
             estrellas.forEach(s => {
-
                 s.classList.remove("active");
 
                 if(
@@ -335,10 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
-
-    // ==========================================
     // ENVIAR RESEÑA
-    // ==========================================
     if(btnComentario){
 
         btnComentario.addEventListener("click", async () => {
@@ -357,8 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     return;
                 }
 
-                const comentario =
-                    inputComentario.value.trim();
+                const comentario = inputComentario.value.trim();
 
                 // VALIDAR COMENTARIO
                 if(comentario === ""){
@@ -446,35 +363,26 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-
-    // ==========================================
     // FILTROS POR CATEGORÍA
-    // ==========================================
     tags.forEach(tag => {
-
         tag.addEventListener("click", () => {
-
             // ACTIVAR ESTILO
             tags.forEach(t => {
                 t.classList.remove("active");
             });
-
             tag.classList.add("active");
 
-            const categoria =
-                tag.textContent.toLowerCase().trim();
+            const categoria = tag.textContent.toLowerCase().trim();
 
-            // TODOS
             if(categoria === "todos" || categoria === "todas"){
                 renderizarLibros(todosLosLibros);
                 return;
             }
-
             // FILTRAR COMPARANDO EN MINÚSCULAS
             const filtrados =
                 todosLosLibros.filter(libro => {
                     return libro.categoria && 
-                           libro.categoria.toLowerCase().includes(categoria);
+                        libro.categoria.toLowerCase().includes(categoria);
                 });
 
             renderizarLibros(filtrados);
@@ -492,10 +400,6 @@ document.addEventListener("DOMContentLoaded", () => {
             renderizarLibros(filtrados);
         });
     }
-
-    // ==========================================
-    // INICIAR OPERACIÓN
-    // ==========================================
     obtenerLibros();
 
 });

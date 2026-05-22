@@ -86,9 +86,7 @@ const transcriptor = nodemailer.createTransport({
 
 });
 
-// ================================================
 // RUTA PARA SOPORTE TÉCNICO
-// ================================================
 app.post("/api/soporte", async (req, res) => {
 
     try {
@@ -126,9 +124,7 @@ app.post("/api/soporte", async (req, res) => {
 
 });
 
-// ================================================
 // RUTA PARA SUBIR LIBROS
-// ================================================
 app.post("/api/libros/subir", upload.single("pdf"), async (req, res) => {
 
     try {
@@ -186,9 +182,7 @@ app.post("/api/libros/subir", upload.single("pdf"), async (req, res) => {
 
 });
 
-// ================================================
 // OBTENER TODOS LOS LIBROS
-// ================================================
 app.get("/api/libros/todos", async (req, res) => {
 
     try {
@@ -209,9 +203,7 @@ app.get("/api/libros/todos", async (req, res) => {
 
 });
 
-// ================================================
 // GUARDAR RESEÑA
-// ================================================
 app.post("/api/resenas", async (req, res) => {
 
     try {
@@ -263,9 +255,7 @@ app.post("/api/resenas", async (req, res) => {
 
 });
 
-// ================================================
 // OBTENER RESEÑAS DE UN LIBRO
-// ================================================
 app.get("/api/resenas/:libroId", async (req, res) => {
 
     try {
@@ -292,9 +282,7 @@ app.get("/api/resenas/:libroId", async (req, res) => {
 
 });
 
-// ================================================
 // RUTA PARA ELIMINAR UN LIBRO
-// ================================================
 app.delete("/api/libros/eliminar/:id", async (req, res) => {
 
     try {
@@ -351,9 +339,6 @@ app.delete("/api/libros/eliminar/:id", async (req, res) => {
 
 });
 
-// ================================================
-// RUTA PARA EDITAR UN LIBRO
-// ================================================
 app.put("/api/libros/editar/:id", async (req, res) => {
 
     try {
@@ -410,9 +395,6 @@ app.put("/api/libros/editar/:id", async (req, res) => {
 
 });
 
-// ================================================
-// REGISTRO DE USUARIOS
-// ================================================
 app.post("/registro", async (req, res) => {
 
     try {
@@ -477,9 +459,6 @@ app.post("/registro", async (req, res) => {
 
 });
 
-// ================================================
-// LOGIN DE USUARIOS
-// ================================================
 app.post("/login", async (req, res) => {
 
     try {
@@ -526,9 +505,6 @@ app.post("/login", async (req, res) => {
 
 });
 
-// ================================================
-// PUERTO DE ARRANQUE
-// ================================================
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
