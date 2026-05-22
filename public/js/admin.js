@@ -8,12 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch('/api/libros/todos');
             const libros = await response.json();
             
-            // Limpieza del contenedor eliminando los hijos actuales uno a uno
             while (tablaCuerpo.firstChild) {
                 tablaCuerpo.removeChild(tablaCuerpo.firstChild);
             }
 
-            // Construcción celda por celda usando nodos puros del DOM
             libros.forEach((libro) => {
                 const fila = document.createElement('tr');
 
