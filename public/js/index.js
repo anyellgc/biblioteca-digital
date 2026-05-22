@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formSoporte.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            // Captura de datos en texto plano (Segura contra XSS)
+            
             const inputNombre = document.getElementById('fname');
             const inputCorreo = document.getElementById('femail');
             const txtMensaje = document.getElementById('fmsg');
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     alert("✅ " + data.mensaje);
-                    formSoporte.reset(); // Limpia los campos de texto
+                    formSoporte.reset(); 
                     
                     // Llama a la función global declarada en el HTML
                     if (typeof closeModal === 'function') {
