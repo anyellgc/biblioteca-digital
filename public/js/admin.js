@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const tablaCuerpo = document.getElementById('tablaInventarioCuerpo');
     const totalLibrosLabel = document.getElementById('totalLibrosContador');
 
-    // --- 1. FUNCIÓN PARA CARGAR EL INVENTARIO DESDE MONGO ---
     const cargarInventario = async () => {
         try {
             const response = await fetch('/api/libros/todos');
@@ -74,12 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // --- 2. MANEJADOR DE CLICKS PARA ACCIONES (ELIMINAR Y EDITAR) ---
+
     tablaCuerpo.addEventListener('click', async (e) => {
         const btnDelete = e.target.closest('.delete');
         const btnEdit = e.target.closest('.edit');
-        
-        // ACCIÓN: ELIMINAR LIBRO
+      
         if (btnDelete) {
             const id = btnDelete.dataset.id; 
             if (confirm('¿Estás seguro de eliminar este libro de la base de datos?')) {
@@ -100,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // ACCIÓN: EDITAR LIBRO
         if (btnEdit) {
             const id = btnEdit.dataset.id;
             const fila = btnEdit.closest('tr');
@@ -138,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- 3. FORMULARIO PARA GUARDAR NUEVOS LIBROS ---
     formSubir.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -174,7 +170,5 @@ document.addEventListener('DOMContentLoaded', () => {
             alert("❌ No se pudo conectar con el servidor backend");
         }
     });
-
-    // Carga automática inicial al abrir la página
     cargarInventario();
 });

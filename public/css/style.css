@@ -11,7 +11,6 @@ body {
     line-height: 1.6; 
 }
 
-/* --- NAVBAR --- */
 .navbar {
     display: flex; 
     justify-content: space-between; 
@@ -56,7 +55,6 @@ body {
     font-size: 1.1rem; 
 }
 
-/* --- DROPDOWN CONTACTO (Como el original) --- */
 .dropdown-contact { 
     position: relative; 
 }
@@ -147,7 +145,7 @@ h1 {
 
 .spacer-cta { 
     height: 50px; 
-} /* Espacio extra entre texto y botón */
+} 
 
 .btn-main { 
     padding: 18px 45px; 
@@ -162,7 +160,7 @@ h1 {
     box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
 }
 
-/* --- TARJETAS --- */
+
 .stats-bar { 
     display: flex; 
     justify-content: center; 
@@ -269,8 +267,6 @@ h1 {
     font-size: 1rem;
 }
 
-
-/* BOTONES NAV */
 .nav-buttons { 
     display: flex; 
     gap: 15px; 
@@ -292,15 +288,14 @@ h1 {
     border-radius: 8px; 
 }
 
-/* 1. Subir hacia arriba y limpiar espaciado */
+
 .main-footer {
-    background-color: #1a0b2e; /* Fondo morado oscuro como las tarjetas */
-    color: #e2e8f0;            /* Texto gris claro */
+    background-color: #1a0b2e; 
+    color: #e2e8f0;            
     line-height: 1.2;
-    padding: 30px 5% 15px;      /* Reducción dramática del espaciado superior */
-    margin-top: 50px;           /* Reducción del margen con la sección anterior */
-    border-top: 3px solid #7c3aed; /* Borde morado neón más grueso */
-    position: relative;
+    padding: 30px 5% 15px;    
+    margin-top: 50px;           
+    border-top: 3px solid #7c3aed; 
     z-index: 100;
 }
 
@@ -310,51 +305,49 @@ h1 {
     margin: 0 auto;
 }
 
-/* 2. Logo más grande y con más contraste */
 .footer-logo {
-    font-size: 2.2rem;          /* Mucho más grande */
+    font-size: 2.2rem;        
     font-weight: 800;
-    margin-bottom: 15px;         /* Más separación */
-    color: white;               /* DREAM en blanco */
+    margin-bottom: 15px;         
+    color: white;            
     font-family: 'Segoe UI', sans-serif;
     letter-spacing: -1px;
 }
 
 .footer-logo span {
-    color: #210439;             /* LIBRARY en cian neón */
-    filter: drop-shadow(0 0 10px #d29af3); /* Resaltado (glow) */
+    color: #210439;             
+    filter: drop-shadow(0 0 10px #d29af3)
 }
 
-/* 3. Párrafo descriptivo */
+
 .main-footer p {
-    font-size: 1.4rem;          /* Más grande y legible */
-    color: #c3b5ea;             /* Morado claro */
+    font-size: 1.4rem;          
+    color: #c3b5ea;             
     max-width: 600px;
     margin: 0 auto;
 }
 
-/* 4. Línea de división (Divisor neón) */
 .footer-line {
     height: 3px;
-    width: 100%;                 /* Ocupa todo el ancho */
+    width: 100%;                
     max-width: 800px;
     background: linear-gradient(90deg, transparent, #00f2ff, #7c3aed, #00f2ff, transparent);
-    margin: 40px auto;          /* Más espacio alrededor */
+    margin: 40px auto;          
     filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.7));
 }
 
-/* 5. Copyright (Resaltado con color) */
+
 .copyright {
-    font-size: 1rem;            /* Más grande */
-    color: #94a3b8;             /* Gris neutro */
+    font-size: 1rem;            
+    color: #94a3b8;             
     font-weight: 500;
     margin-bottom: 15px;
 }
 
-/* Subrayado neón para los nombres */
+
 .copyright span {
     border-bottom: 2px solid #460869;
-    color: white;               /* Nombres en blanco */
+    color: white;               
     display: inline-block;
     padding-bottom: 3px;
 }

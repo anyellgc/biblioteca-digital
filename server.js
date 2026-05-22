@@ -11,17 +11,13 @@ const Resena = require("./models/Resena");
 
 const app = express();
 
-// MIDDLEWARES DE PARSEO Y RUTAS ESTÁTICAS
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// 1. Servir los archivos estáticos generales de la carpeta public
 app.use(express.static(path.join(__dirname, "public")));
 
-// 2. RESPALDO DE RUTA PARA ENTREGA CORRECTA DE PDFs
 app.use("/libros", express.static(path.join(__dirname, "public/libros")));
 
-// VERIFICACIÓN DE CARPETAS DE ALMACENAMIENTO
 const uploadDir = path.join(__dirname, "public/libros");
 
 if (!fs.existsSync(uploadDir)) {
@@ -30,7 +26,6 @@ if (!fs.existsSync(uploadDir)) {
 
 }
 
-// --- CONEXIÓN A MONGODB ATLAS ---
 const mongoURI = "mongodb://anyellgc:amgc6372839943@ac-cqmuaag-shard-00-00.c4oobiu.mongodb.net:27017,ac-cqmuaag-shard-00-01.c4oobiu.mongodb.net:27017,ac-cqmuaag-shard-00-02.c4oobiu.mongodb.net:27017/biblioteca?ssl=true&replicaSet=atlas-c43k79-shard-0&authSource=admin&retryWrites=true&w=majority";
 
 mongoose.connect(mongoURI)
@@ -45,7 +40,6 @@ mongoose.connect(mongoURI)
 
 });
 
-// CONFIGURACIÓN DE ALMACENAMIENTO CON MULTER
 const storage = multer.diskStorage({
 
     destination: (req, file, cb) => {
@@ -71,7 +65,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// --- CONFIGURACIÓN DE NODEMAILER PARA SOPORTE ---
 const transcriptor = nodemailer.createTransport({
 
     service: "gmail",
@@ -80,13 +73,12 @@ const transcriptor = nodemailer.createTransport({
 
         user: "ac5095319@gmail.com",
 
-        pass: "TU_CONTRASEÑA_DE_APLICACION"
+        pass: "12345"
 
     }
 
 });
 
-// RUTA PARA SOPORTE TÉCNICO
 app.post("/api/soporte", async (req, res) => {
 
     try {

@@ -1,5 +1,3 @@
-// usuario.js
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const contenedorLibros = document.getElementById("contenedorLibros");
@@ -154,9 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     };
 
-    // ==========================================
-    // CARGAR RESEÑAS (CORREGIDO)
-    // ==========================================
     async function cargarResenas(libroId){
 
         try{

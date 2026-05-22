@@ -1,4 +1,3 @@
-/* --- CONFIGURACIÓN GENERAL --- */
 * { 
     margin: 0; 
     padding: 0; 
@@ -16,20 +15,19 @@ body {
     padding: 20px; 
 }
 
-/* --- TARJETA DE REGISTRO (TAMAÑO REDUCIDO) --- */
 .auth-card.wide { 
     background: #162031; 
-    padding: 35px 40px; /* Relleno más equilibrado */
+    padding: 35px 40px; 
     border-radius: 20px; 
     border: 1px solid #7c3aed; 
     width: 100%; 
-    max-width: 670px; /* Reducción de tamaño aplicada aquí */
+    max-width: 670px; 
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 15px rgba(124, 58, 237, 0.1);
 }
 
 h2 {
     text-align: center;
-    font-size: 2rem; /* Título un poco más pequeño */
+    font-size: 2rem; 
     font-weight: 800;
     margin-bottom: 5px;
 }
@@ -41,11 +39,10 @@ h2 {
     font-size: 1rem;
 }
 
-/* --- FORMULARIO EN CUADRÍCULA --- */
 .grid-form { 
     display: grid; 
     grid-template-columns: 1fr 1fr; 
-    gap: 18px; /* Espaciado interno entre campos */
+    gap: 18px; 
 }
 
 .input-group { 
@@ -62,7 +59,7 @@ h2 {
 }
 
 .input-group input, .custom-select { 
-    padding: 12px; /* Un poco más delgados */
+    padding: 12px; 
     background: #0d0415; 
     border: 1px solid #311b92; 
     border-radius: 10px; 
@@ -72,7 +69,6 @@ h2 {
     transition: 0.3s ease;
 }
 
-/* Efecto Focus */
 .input-group input:focus, .custom-select:focus {
     border-color: #00f2ff;
     box-shadow: 0 0 8px rgba(0, 242, 255, 0.2);
@@ -82,7 +78,6 @@ h2 {
     grid-column: span 2; 
 }
 
-/* --- BOTÓN NEÓN --- */
 .btn-submit { 
     width: 100%; 
     padding: 15px; 
@@ -105,7 +100,6 @@ h2 {
     filter: brightness(1.1);
 }
 
-/* --- FOOTER --- */
 .auth-footer { 
     margin-top: 25px; 
     text-align: center; 

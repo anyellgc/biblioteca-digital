@@ -1,7 +1,6 @@
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
-    e.preventDefault(); // Evita que la página se recargue
+    e.preventDefault(); 
 
-    // Obtener los valores de los inputs
     const usuario = e.target.usuario.value;
     const password = e.target.password.value;
 
@@ -15,11 +14,10 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         const data = await response.json();
 
         if (response.ok) {
-            // Aquí es donde decides a dónde va cada uno
             if (data.rol === "admin") {
-                window.location.href = "admin.html"; // Asegúrate de que este archivo exista
+                window.location.href = "admin.html"; 
             } else {
-                window.location.href = "usuario.html"; // O la página principal del usuario
+                window.location.href = "usuario.html"; 
             }
         } else {
             alert("Error: " + data.mensaje);
